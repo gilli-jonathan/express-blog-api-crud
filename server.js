@@ -15,7 +15,7 @@ app.use('/posts', postsRouter)
 
 app.get('/', (req, res)=> {
 
-    res.jason('ciao')
+    res.json('ciao')
 })
 
 
