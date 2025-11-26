@@ -1,5 +1,6 @@
 //il nostro import
 const express = require('express')
+const {index, show, store, update,  modify, destroy} = require('../controllers/postsController')
 
 
 //creazione della route per esposrtarla
@@ -8,9 +9,7 @@ const router = express.Router()
 
 //la logica di cio che avviene
 
-router.get('/', (req, res) => {
-  res.send('OHH BENVENUTI nel nostro blog')
-})
+router.get('/', postsController.index)
 
 // show
 router.get('/:id', function (req, res) {
