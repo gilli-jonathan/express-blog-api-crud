@@ -4,7 +4,7 @@ const PORT = 3000
 // const posts = require('./posts')
 
 //import post router
-const postsRouter = require('./routers/posts')
+const postsRouter = require('./routers/postsRoute')
 
 app.listen(PORT, ()=>{
   console.log(`Server running on http://localhost:${PORT}`);  
@@ -19,4 +19,3 @@ app.get('/', (req, res)=> {
 })
 
 
-//test test
