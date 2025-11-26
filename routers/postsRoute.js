@@ -1,6 +1,6 @@
 //il nostro import
 const express = require('express')
-const {index, show, store, update,  modify, destroy} = require('../controllers/postsController')
+const postsController = require('../controllers/postsController')
 
 
 //creazione della route per esposrtarla
@@ -12,25 +12,19 @@ const router = express.Router()
 router.get('/', postsController.index)
 
 // show
-router.get('/:id', function (req, res) {
-res.send(`Dettagli del post ${req.params.id}`);
-});
+router.get('/:id', postsController.show);
+
 // store
-router.post('/', function (req, res) {
-res.send('Creazione di un nuovo post');
-});
+router.post('/', postsController.store);
+
 // update
-router.put('/:id', function (req, res) {
-res.send(`Modifica totale tombale, definitiva del post ${req.params.id} `);
-});
+router.put('/:id', postsController.update);
+
 // modify
-router.patch('/:id', function (req, res) {
-res.send(`Modifica piccolina del post ${req.params.id}`);
-});
+router.patch('/:id', postsController.modify);
+
 // destroy
-router.delete('/:id', (req, res)=>{
-  res.send(`Addio soldato: ${req.params.id}`)
-})
+router.delete('/:id', postsController.delete)
 
 
 //il mio return ()
