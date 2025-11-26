@@ -1,15 +1,30 @@
 const  posts = require('../data/posts');
-const { post } = require('../routers/postsRoute');
+const  post  = require('../routers/postsRoute');
 
 //index
 const index = (req, res) => {
-  res.json('OHH BENVENUTI nel nostro blog')
+  res.json({posts})
 }
 
 // show
 const show = (req, res) => {
-res.json(`Dettagli del post ${req.params.id}`);
-}
+
+    const id = Number(req.params.id)
+
+    const trovato = posts.find(post => post.id === id)
+
+        if (!trovato) {
+        return res.status(404).json({
+            error: true,
+            message: 'il post è troppo timido per farsi vedere'
+        })
+    }
+
+    res.json(trovato)
+
+
+};
+
 
 // store
 const store = (req, res) => {
