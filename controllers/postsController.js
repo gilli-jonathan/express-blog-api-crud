@@ -1,5 +1,5 @@
 const  posts = require('../data/posts');
-const  post  = require('../routers/postsRoute');
+
 
 //index
 const index = (req, res) => {
@@ -53,7 +53,7 @@ const destroy = (req, res)=>{
         })
     }
 
-    post.splice(posts.indexOf(target), 1)
+    posts.splice(posts.indexOf(target), 1)
     console.log(posts);
 
     res.sendStatus(204)
