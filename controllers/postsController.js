@@ -28,8 +28,13 @@ const show = (req, res) => {
 
 // store
 const store = (req, res) => {
+    
+    console.log(req.body);
+    
 res.send('Creazione di un nuovo post');
 };
+
+
 // update
 const update = (req, res) => {
 res.send(`Modifica totale tombale, definitiva del post ${req.params.id} `);

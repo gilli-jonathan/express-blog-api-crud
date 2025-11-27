@@ -3,6 +3,9 @@ const app = express()
 const PORT = 3000
 // const posts = require('./posts')
 
+//body-parsing
+app.use(express.json());
+
 //import post router
 const postsRouter = require('./routers/postsRoute')
 
