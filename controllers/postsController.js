@@ -30,9 +30,23 @@ const show = (req, res) => {
 const store = (req, res) => {
 
    console.log(req.body);
+
+   const newId =posts[posts.length - 1].id + 1;
+
+   const nuovoArticolo = {
+    id : newId,
+    title: req.body.title,
+    content:req.body.content,
+    image: req.body.image,
+    tags: req.body.tags
+   }
+
+   posts.push(nuovoArticolo)
+
+   console.log(posts);
    
-    
-res.send('Creazione di un nuovo post');
+    res.status(201);  
+    res.json(nuovoArticolo);
 };
 
 
