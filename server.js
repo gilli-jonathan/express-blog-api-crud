@@ -22,4 +22,7 @@ app.get('/', (req, res)=> {
     res.json('ciao')
 })
 
+const notFound = require('./middleware/notFound')
+app.use(notFound)
+
 
