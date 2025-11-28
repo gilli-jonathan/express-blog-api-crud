@@ -4,8 +4,14 @@ const  posts = require('../data/posts');
 
 //index
 const index = (req, res) => {
+    
   res.json({posts})
 }
+
+// const index = (req, res) => {
+//   throw new Error("Test errore interno");
+//   res.json({ posts });
+// };
 
 // show
 const show = (req, res) => {

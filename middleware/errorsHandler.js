@@ -1,8 +1,8 @@
 function errorsHandler(err, req, res, next) {
 
     res.status(500)
-    res.jason({
-        error:errorsHandler.message,
+    res.json({
+        error:err.message,
         message: 'senti a me, meglio che lasci perdere'
     })
 }
