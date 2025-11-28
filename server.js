@@ -25,4 +25,5 @@ app.get('/', (req, res)=> {
 const notFound = require('./middleware/notFound')
 app.use(notFound)
 
-
+const errorsHandler = require('./middleware/errorsHandler')
+app.use(errorsHandler)
