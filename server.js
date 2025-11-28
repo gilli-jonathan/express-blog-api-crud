@@ -6,13 +6,14 @@ const PORT = 3000
 //body-parsing
 app.use(express.json());
 
-//import post router
-const postsRouter = require('./routers/postsRoute')
 
 app.listen(PORT, ()=>{
   console.log(`Server running on http://localhost:${PORT}`);  
 })
 
+
+//import post router
+const postsRouter = require('./routers/postsRoute')
 app.use('/posts', postsRouter)
 
 

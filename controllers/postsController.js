@@ -1,5 +1,5 @@
 const  posts = require('../data/posts');
-const { post } = require('../routers/postsRoute');
+
 
 
 //index
